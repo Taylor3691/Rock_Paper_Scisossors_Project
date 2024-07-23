@@ -3,6 +3,24 @@ let score = JSON.parse(localStorage.getItem('history')) || {
     lose:0,
     tie:0
 };
+
+let isStillPlaying = false;
+let setIntervalId;
+function autoPlay(){
+    if(!isStillPlaying){
+        setIntervalId = setInterval(function(){
+            isStillPlaying = true;
+            let playerMove = pickMove();
+            playGame(playerMove);
+            document.querySelector('.auto-play-button').innerHTML = 'Stop playing';
+        },1000);
+    }else{
+        clearInterval(setIntervalId);
+        isStillPlaying = false;
+        document.querySelector('.auto-play-button').innerHTML = 'Auto Play';
+    }
+}
+
 document.querySelector('.score-annouce').innerHTML = `Wins: ${score.win}, Losses: ${score.lose}, Ties: ${score.tie}`;
 
 function showScore(){
@@ -14,7 +32,7 @@ function showResult(computerMove, playerMove, result){
     document.querySelector('.announce').innerHTML = `You picked  <img src="images/${playerMove}-emoji.png" alt="" class="button-icon">, Computer picked  <img src="images/${computerMove}-emoji.png" alt="" class="button-icon">. You ${result}`;
 }
 
-function playGame(playerMove){
+function pickMove(){
     let random = Math.random();
     let computerMove;
     if(random<1/3&& random>=0){
@@ -24,6 +42,12 @@ function playGame(playerMove){
     }else{
         computerMove = 'Scissors';
     }
+    return computerMove;
+}
+
+function playGame(playerMove){
+    let random = Math.random();
+    let computerMove = pickMove();
     let result;
     if(playerMove === computerMove){
         score.tie++;
