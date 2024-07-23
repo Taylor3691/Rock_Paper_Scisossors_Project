@@ -30,6 +30,7 @@
 - Giao diện thân thiện, hiển thị đầy đủ, thao tác chỉ cần bấm chuột.
 - Hệ thống ghi điểm và lưu trữ vào local Storage.
 - Chức năng Reset score khi cần chơi ván mới.
+- Có thể để tự máy tính chơi.
 
 ## 5. Xây dựng bởi
 - Công cụ: Visual Code.
