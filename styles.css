@@ -25,7 +25,9 @@ body {
 
 }
 
-.reset-button{
+.reset-button,
+.auto-play-button
+{
     background-color: white;
     font-size: 15px;
     padding: 10px 20px;
