@@ -31,6 +31,7 @@
 - Hệ thống ghi điểm và lưu trữ vào local Storage.
 - Chức năng Reset score khi cần chơi ván mới.
 - Có thể để tự máy tính chơi.
+- có thể nhấn key 'r','p' hay 's' trên bàn phím để chơi.
 
 ## 5. Xây dựng bởi
 - Công cụ: Visual Code.
