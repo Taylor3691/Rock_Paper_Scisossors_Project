@@ -32,6 +32,16 @@ function showResult(computerMove, playerMove, result){
     document.querySelector('.announce').innerHTML = `You picked  <img src="images/${playerMove}-emoji.png" alt="" class="button-icon">, Computer picked  <img src="images/${computerMove}-emoji.png" alt="" class="button-icon">. You ${result}`;
 }
 
+document.body.addEventListener('keydown',(event)=>{
+    if(event.key==='r'){
+        playGame('Rock');
+    }else if(event.key==='s'){
+        playGame('Scissors');
+    }else if(event.key==='p'){
+        playGame('Paper');
+    }
+});
+
 function pickMove(){
     let random = Math.random();
     let computerMove;
